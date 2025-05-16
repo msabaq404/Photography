@@ -1,0 +1,127 @@
+---
+import { Image } from "astro:assets";
+import Hamburger from "../components/hamburger.astro";
+import Layout from "../layouts/Layout.astro";
+import Header from "../assets/header.png";
+---
+
+<Layout>
+  <div class="navbar">
+    <div class="container">
+      <Hamburger />
+      <nav>
+        <ul class="links">
+          <a href="">Portfolio</a>
+          <a href="">Services</a>
+          <a href="">Works</a>
+          <a href="">Contact</a>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="container">
+      <h1>John <br />Smith</h1>
+      <p>
+        I am a professional photographer based in San Francisco, creating
+        dreamscapes with black, white, and shades in between.
+      </p>
+    </div>
+    <!-- <Image src={Header} alt="John Smith" /> -->
+  </div>
+
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi illo
+  perferendis corrupti harum, veritatis consectetur, voluptates quia sunt
+  commodi cupiditate molestiae dolore. Iure esse quibusdam praesentium quod ipsa
+  animi facere, harum sed maiores quas odio! Assumenda rerum est id dolore cum
+  dolor veritatis voluptatibus sit non, nemo possimus quaerat itaque a adipisci
+  quis magnam nesciunt repellendus saepe maxime iusto aliquam perferendis quas.
+  Porro iste dolorum unde. Accusantium magni autem saepe dignissimos eaque harum
+  reiciendis, modi rem velit illo dolorum. Id deserunt omnis, architecto harum
+  pariatur quis ipsum exercitationem beatae perferendis maiores nobis numquam
+  consectetur voluptas aliquid impedit amet, odio modi. Ex numquam nihil
+  assumenda omnis molestiae explicabo saepe deserunt magni voluptatibus beatae
+  facere qui dolore dignissimos amet dicta odio atque, similique cum! Quisquam a
+  quasi cupiditate aliquam non nulla, est id. Doloremque necessitatibus ipsam
+  dolor labore odio nisi optio non dicta repudiandae. Quo autem odio hic iste
+  error vitae assumenda repudiandae consequuntur, commodi excepturi! Iusto culpa
+  sapiente temporibus veniam tempore laborum excepturi molestiae ex iure
+  incidunt animi sed, dolorem deleniti nisi asperiores commodi debitis eaque
+  consequatur ad amet velit praesentium sit. Cupiditate hic distinctio veritatis
+  corporis consectetur aut perferendis aliquid excepturi ipsum, totam rerum
+  adipisci! Architecto necessitatibus quia unde dolorem explicabo. Veniam
+  officiis similique maxime! Molestias unde mollitia repudiandae provident
+  autem, consequatur, fugit et veritatis officiis harum molestiae libero
+  possimus maxime expedita vel laudantium dolore recusandae itaque quasi. Nam
+  iure quia mollitia ab quod asperiores! Rem aliquid facilis voluptates odit
+  saepe esse maiores, inventore et repellat! Sunt modi nisi voluptas officiis
+  accusamus commodi! Commodi voluptas, sint nihil exercitationem odio officiis
+  ipsum obcaecati aliquid. Aspernatur fuga odio nulla saepe voluptatem natus.
+  Facilis similique non beatae optio inventore odio odit dolorem quis earum.
+  Quia alias distinctio placeat quisquam aperiam excepturi, cum ea maiores
+  deleniti tempora iure. Dolor sint eius quos sapiente dolore.
+</Layout>
+
+<style>
+  .navbar {
+    background-color: black;
+    height: 80px;
+  }
+  .navbar .container {
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    gap: 50px;
+    align-items: center;
+  }
+  a {
+    padding: 10px 20px;
+    color: white;
+  }
+</style>
+
+<style>
+  .hero {
+    height: calc(100vh - 80px);
+    position: relative;
+
+    background-image: radial-gradient(
+        circle,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 1)
+      ),
+      linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1));
+
+    height: 100%;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+
+    h1 {
+      font-family: "Glinster";
+      color: var(--primary-color);
+      font-size: 5em;
+    }
+
+    p {
+      max-width: 420px;
+      font-size: 1.2em;
+    }
+
+    img {
+      position: absolute;
+      height: 100%;
+      aspect-ratio: 3/2;
+      width: auto;
+      right: 0;
+      top: 0;
+      object-fit: cover;
+      background-attachment: fixed;
+    }
+  }
+</style>
