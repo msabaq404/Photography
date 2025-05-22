@@ -1,0 +1,107 @@
+---
+const quotes = [
+  "Non Conventional",
+  "Shoot with Soul",
+  "Defy the Ordinary",
+  "Born To Create",
+  "Raw. Real. Relentless.",
+  "Beyond Aesthetic",
+];
+---
+
+<div style=`--length: ${quotes.length}` class="scroll bg-black h-32 border-y-2 border-primary">
+
+  <div class="relative scroll-text flex justify-start items-center h-full container overflow-x-hidden">
+    {quotes.map((quote, index) => (
+      <div style=`--index: ${2 * index + 1}` class="item text-3xl  text-primary font-[Glinster] whitespace-nowrap">{quote}</div>
+      <div style=`--index: ${2 * index + 2}` class="item text-5xl text-primary">✦</div> ))}
+  </div>
+</div>
+
+<style>
+  .container{
+    padding: 0 !important;
+  }
+  .item {
+    position: absolute;
+    cursor: pointer;
+    right: calc(-1 * ( var(--width) - var(--gap)));
+    animation: scroll var(--time) linear calc(var(--delay) - 10s) infinite;
+  }
+  .scroll:hover .item {
+    animation-play-state: paused;
+  }
+  @keyframes scroll {
+    
+    to {
+      right: calc(var(--total-width) - var(--width)  );
+    }
+  }
+
+</style>
+
+<script>
+  const TOTAL_TIME = 10; // total time in s
+  const GAP = 1.25; // gap in rem
+  const items = document.querySelectorAll(".item") as NodeListOf<HTMLElement>;
+  const widths = Array.from(items).map(item => item.offsetWidth);
+  const gap = GAP * parseFloat(getComputedStyle(document.documentElement).fontSize);
+  const totalWidth = widths.reduce((acc, width) => acc + width, 0) + gap * items.length ;
+  (document.querySelector('.scroll') as HTMLElement)!.style.setProperty('--total-width', `${totalWidth}px`);
+  
+
+  const speed = totalWidth / TOTAL_TIME;
+  let trueWidth: number[] = [];
+  items.forEach((item, index) => {
+    let width: number;
+    width = widths[index] + gap;
+    trueWidth.push(width);
+    item.style.setProperty('--width', `${width}px`);
+
+   
+    item.style.setProperty('--gap', `${gap}px`);
+    
+
+
+    item.style.setProperty('--time', `${(totalWidth)/speed}s`);
+  });
+
+  items.forEach((item, index) => {
+    const cumulativeWidth = trueWidth.slice(0, index)
+    .reduce((acc, width) => acc + width, 0);
+
+    item.style.setProperty('--delay', `${cumulativeWidth/speed}s`);
+
+  });
+
+
+  
+  if (import.meta.env.DEV) {
+    console.log({
+      TOTAL_TIME,
+      items,
+      widths,
+      gap,
+      totalWidth,
+      speed,
+      trueWidth
+    });
+
+    // Log item properties
+    items.forEach((item, index) => {
+      console.log(`Item ${index}:`, {
+        element: item,
+        width: widths[index],
+        trueWidth: trueWidth[index],
+        style: {
+          width: item.style.getPropertyValue('--width'),
+          gap: item.style.getPropertyValue('--gap'),
+          time: item.style.getPropertyValue('--time'),
+          delay: item.style.getPropertyValue('--delay')
+        }
+      });
+    });
+  }
+
+  
+</script>

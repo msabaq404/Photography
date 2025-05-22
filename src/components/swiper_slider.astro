@@ -1,0 +1,229 @@
+---
+import "swiper/css";
+// import "swiper/css/navigation";
+import "swiper/css/pagination";
+import QuoteIcon from "./quote_icon.astro";
+---
+
+<div class="carousel relative">
+  <div class="swiper-container flex h-full items-center overflow-hidden">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="review">
+          <QuoteIcon />
+          <p>
+            John Smith is truly exceptional! His ability to capture candid
+            moments is remarkable, and the quality of his work exceeded all my
+            expectations. Highly recommended!
+          </p>
+        </div>
+
+        <div class="customer">
+          <div class="profile">
+            <img
+              src="https://randomuser.me/api/portraits/men/1.jpg"
+              alt="profile"
+            />
+          </div>
+          <div class="info">
+            <h3>John Doe</h3>
+            <p>Los Angeles</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper-slide">
+        <div class="review">
+          <QuoteIcon />
+          <p>
+            John Smith captured our wedding perfectly! His eye for detail and
+            authentic moments gave us memories we'll cherish forever. His use of
+            natural light was magical.
+          </p>
+        </div>
+
+        <div class="customer">
+          <div class="profile">
+            <img
+              src="https://randomuser.me/api/portraits/women/26.jpg"
+              alt="profile"
+            />
+          </div>
+          <div class="info">
+            <h3>Emma Johnson</h3>
+            <p>New York</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="review">
+          <QuoteIcon />
+          <p>
+            I needed professional headshots for my business. John made me feel
+            comfortable and delivered polished photos that perfectly represent
+            my brand.
+          </p>
+        </div>
+
+        <div class="customer">
+          <div class="profile">
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="profile"
+            />
+          </div>
+          <div class="info">
+            <h3>Michael Chen</h3>
+            <p>San Francisco</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="review">
+          <QuoteIcon />
+          <p>
+            John was patient with our children during our family session and
+            captured their personalities beautifully. The photos brought tears
+            to my eyes.
+          </p>
+        </div>
+
+        <div class="customer">
+          <div class="profile">
+            <img
+              src="https://randomuser.me/api/portraits/women/54.jpg"
+              alt="profile"
+            />
+          </div>
+          <div class="info">
+            <h3>Sarah Williams</h3>
+            <p>Chicago</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="review">
+          <QuoteIcon />
+          <p>
+            John photographed my property for a real estate listing. His
+            stunning images helped sell the property within a week!
+          </p>
+        </div>
+
+        <div class="customer">
+          <div class="profile">
+            <img
+              src="https://randomuser.me/api/portraits/men/67.jpg"
+              alt="profile"
+            />
+          </div>
+          <div class="info">
+            <h3>Robert Garcia</h3>
+            <p>Miami</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<style>
+  .carousel {
+    width: min(70rem, 100%);
+    height: 18rem;
+  }
+
+  .swiper-slide {
+    height: 100%;
+    background: var(--secondary-color);
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    padding: 1rem;
+    display: grid;
+    cursor: grab;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  .swiper-slide .customer {
+    margin-top: auto;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+  }
+  .swiper-slide .review p {
+    margin: 0.5rem 0;
+  }
+  .swiper-slide img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+  }
+  .swiper-slide .profile {
+    display: inline-block;
+  }
+  .swiper-slide .info {
+    display: inline-block;
+    margin-left: 1rem;
+  }
+  .swiper-slide .info h3 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .swiper-slide .info p {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  .swiper-pagination {
+    position: absolute;
+    bottom: 0px;
+    transform: translateY(150%);
+    z-index: 10;
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    background-color: var(--secondary-color) !important;
+  }
+</style>
+
+<script>
+  // Import Swiper JS
+  import Swiper from "swiper";
+  import { Pagination, Autoplay } from "swiper/modules";
+
+  // Initialize Swiper
+  document.addEventListener("DOMContentLoaded", function () {
+    const swiper = new Swiper(".swiper-container", {
+      modules: [Pagination, Autoplay],
+
+      loop: true,
+      spaceBetween: 30,
+      slidesPerView: 1,
+      centeredSlides: true,
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        }
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+
+      //   navigation: {
+      //     nextEl: ".swiper-button-next",
+      //     prevEl: ".swiper-button-prev",
+      //   },
+    });
+  });
+</script>

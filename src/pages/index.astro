@@ -1,22 +1,51 @@
 ---
 import { Image } from "astro:assets";
-import Hamburger from "../components/hamburger.astro";
 import Layout from "../layouts/Layout.astro";
-import Header from "../assets/header.png";
+import Header from "../assets/header.webp";
+import Best1 from "../assets/best-1.webp";
+import Best2 from "../assets/best-2.webp";
+import Best3 from "../assets/best-3.webp";
+import Best4 from "../assets/best-4.webp";
+import Best5 from "../assets/best-5.webp";
+import Im1 from "../assets/1.webp";
+import Im2 from "../assets/2.webp";
+import Im3 from "../assets/3.webp";
+import Im4 from "../assets/4.webp";
+import Im5 from "../assets/5.webp";
+import Im6 from "../assets/6.webp";
+import Im7 from "../assets/7.webp";
+import Im8 from "../assets/8.webp";
+import RightArrow from "../components/right_arrow.astro";
+import Scroll from "../components/scroll.astro";
+import SwiperSlider from "../components/swiper_slider.astro";
+import ShapeDivider from "../components/shape_divider.astro";
+import Pricing from "../components/pricing.astro";
+import Connect from "../components/connect.astro";
+
+const image_Width = 440;
 ---
 
 <Layout>
   <div class="navbar">
     <div class="container">
-      <Hamburger />
-      <nav>
-        <ul class="links">
-          <a href="">Portfolio</a>
-          <a href="">Services</a>
-          <a href="">Works</a>
-          <a href="">Contact</a>
-        </ul>
-      </nav>
+      <h3 class="font-[Glinster] text-5xl font-thin tracking-[-5px]">
+        J<span class="text-primary">S</span>
+      </h3>
+      <div class="ml-auto">
+        <a
+          href=""
+          class="hire group relative block bg-transparent px-8 py-2 border-2 rounded-3xl before:rounded-3xl overflow-hidden z-10 transition-all duration-300 hover:text-black"
+          ><div
+            class="absolute text-black left-[-25px] transition-all duration-300 group-hover:left-2"
+          >
+            <RightArrow />
+          </div><span
+            class="inline-block transition-transform
+            group-hover:translate-x-2"
+            >Hire Me</span
+          ></a
+        >
+      </div>
     </div>
   </div>
 
@@ -24,104 +53,515 @@ import Header from "../assets/header.png";
     <div class="container">
       <h1>John <br />Smith</h1>
       <p>
-        I am a professional photographer based in San Francisco, creating
-        dreamscapes with black, white, and shades in between.
+        I am a professional photographer, <br /> based in San Francisco<br />
       </p>
     </div>
-    <!-- <Image src={Header} alt="John Smith" /> -->
+    <div class="hero-image">
+      <Image
+        src={Header}
+        alt="John Smith"
+        class=""
+        width={1920}
+        loading="eager"
+        decoding="async"
+      />
+    </div>
   </div>
 
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi illo
-  perferendis corrupti harum, veritatis consectetur, voluptates quia sunt
-  commodi cupiditate molestiae dolore. Iure esse quibusdam praesentium quod ipsa
-  animi facere, harum sed maiores quas odio! Assumenda rerum est id dolore cum
-  dolor veritatis voluptatibus sit non, nemo possimus quaerat itaque a adipisci
-  quis magnam nesciunt repellendus saepe maxime iusto aliquam perferendis quas.
-  Porro iste dolorum unde. Accusantium magni autem saepe dignissimos eaque harum
-  reiciendis, modi rem velit illo dolorum. Id deserunt omnis, architecto harum
-  pariatur quis ipsum exercitationem beatae perferendis maiores nobis numquam
-  consectetur voluptas aliquid impedit amet, odio modi. Ex numquam nihil
-  assumenda omnis molestiae explicabo saepe deserunt magni voluptatibus beatae
-  facere qui dolore dignissimos amet dicta odio atque, similique cum! Quisquam a
-  quasi cupiditate aliquam non nulla, est id. Doloremque necessitatibus ipsam
-  dolor labore odio nisi optio non dicta repudiandae. Quo autem odio hic iste
-  error vitae assumenda repudiandae consequuntur, commodi excepturi! Iusto culpa
-  sapiente temporibus veniam tempore laborum excepturi molestiae ex iure
-  incidunt animi sed, dolorem deleniti nisi asperiores commodi debitis eaque
-  consequatur ad amet velit praesentium sit. Cupiditate hic distinctio veritatis
-  corporis consectetur aut perferendis aliquid excepturi ipsum, totam rerum
-  adipisci! Architecto necessitatibus quia unde dolorem explicabo. Veniam
-  officiis similique maxime! Molestias unde mollitia repudiandae provident
-  autem, consequatur, fugit et veritatis officiis harum molestiae libero
-  possimus maxime expedita vel laudantium dolore recusandae itaque quasi. Nam
-  iure quia mollitia ab quod asperiores! Rem aliquid facilis voluptates odit
-  saepe esse maiores, inventore et repellat! Sunt modi nisi voluptas officiis
-  accusamus commodi! Commodi voluptas, sint nihil exercitationem odio officiis
-  ipsum obcaecati aliquid. Aspernatur fuga odio nulla saepe voluptatem natus.
-  Facilis similique non beatae optio inventore odio odit dolorem quis earum.
-  Quia alias distinctio placeat quisquam aperiam excepturi, cum ea maiores
-  deleniti tempora iure. Dolor sint eius quos sapiente dolore.
-</Layout>
+  <Scroll />
 
-<style>
-  .navbar {
-    background-color: black;
-    height: 80px;
-  }
-  .navbar .container {
-    height: 100%;
-    display: flex;
-    justify-content: start;
-    gap: 50px;
-    align-items: center;
-  }
-  a {
-    padding: 10px 20px;
-    color: white;
-  }
-</style>
+  <div class="best-works pb-4 bg-black">
+    <div class="container relative image-container overflow-hidden">
+      <h1 class="text-5xl py-4 font-[Glinster] text-primary">My Best Works</h1>
+      <div class="relative">
+        <div class="flex gap-4 overflow-x-scroll scrollbar-hide">
+          <div class="prev-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"></path>
+            </svg>
+          </div>
+          <div class="next-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+            </svg>
+          </div>
+          <Image
+            src={Best1}
+            alt="Best Work 1"
+            width={image_Width}
+            loading="lazy"
+          />
+          <Image
+            src={Best2}
+            alt="Best Work 2"
+            width={image_Width}
+            loading="lazy"
+          />
+          <Image
+            src={Best3}
+            alt="Best Work 3"
+            width={image_Width}
+            loading="lazy"
+          />
+          <Image
+            src={Best4}
+            alt="Best Work 4"
+            width={image_Width}
+            loading="lazy"
+          />
+          <Image
+            src={Best5}
+            alt="Best Work 5"
+            width={image_Width}
+            loading="lazy"
+          />
+          <div class="size-24 shrink-0 bg-black"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<style>
-  .hero {
-    height: calc(100vh - 80px);
-    position: relative;
+  <div class="shape-divider bg-black">
+    <svg
+      data-name="Layer 1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 120"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M0,27.35A600.21,600.21,0,0,0,321.39,56.44
+                 c58-10.79,114.16-30.13,172-41.86,
+                 82.39-16.72,168.19-17.73,250.45-.39
+                 C823.78,31,906.67,72,985.66,92.83
+                 c70.05,18.48,146.53,26.09,214.34,3"
+        fill="none"
+        stroke="var(--primary-color)"
+        stroke-width="2.5"></path>
+    </svg>
+  </div>
 
-    background-image: radial-gradient(
-        circle,
-        rgba(0, 0, 0, 0.9),
-        rgba(0, 0, 0, 1)
-      ),
-      linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1));
+  <div class="discover-my-work relative bg-black">
+    <div class="container">
+      <h1 class="text-5xl py-4 font-[Glinster] text-primary">
+        Discover My Works
+      </h1>
 
-    height: 100%;
+      <div class="masonry columns-2 md:columns-3 gap-4">
+        <Image
+          src={Im2}
+          alt="Image 2"
+          class="mb-4 z-20 relative brightness-95"
+          loading="lazy"
+        />
+        <Image
+          src={Im3}
+          alt="Image 3"
+          class="mb-4 relative brightness-95"
+          loading="lazy"
+        />
+        <Image
+          src={Im1}
+          alt="Image 1"
+          class="mb-4 relative brightness-95"
+          loading="lazy"
+        />
+        <Image
+          src={Im6}
+          alt="Image 6"
+          class="mb-4 relative brightness-95"
+          loading="lazy"
+        />
+        <Image
+          src={Im7}
+          alt="Image 7"
+          class="mb-4 relative brightness-95"
+          loading="lazy"
+        />
+        <Image
+          src={Im4}
+          alt="Image 4"
+          class="mb-4 relative brightness-95"
+          loading="lazy"
+        />
+        <Image
+          src={Im5}
+          alt="Image 5"
+          class="mb-4 relative brightness-95"
+          loading="lazy"
+        />
+        <Image
+          src={Im8}
+          alt="Image 8"
+          class="mb-4 relative brightness-95"
+          loading="lazy"
+        />
+      </div>
+    </div>
 
-    .container {
+    <div class="shape-divider wavy bottom-[-100px] absolute w-full">
+      <svg
+      id="visual"
+      viewBox="0 450 900 150"
+      width="100%"
+      height="148px"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      version="1.1"
+      preserveAspectRatio="none"
+      ><path
+        d="M0 509L30 507.3C60 505.7 120 502.3 180 500.3C240 498.3 300 497.7 360 489.7C420 481.7 480 466.3 540 460.7C600 455 660 459 720 467.5C780 476 840 489 870 495.5L900 502L900 601L870 601C840 601 780 601 720 601C660 601 600 601 540 601C480 601 420 601 360 601C300 601 240 601 180 601C120 601 60 601 30 601L0 601Z"
+        fill="#d0b8ac"></path><path
+        d="M0 550L30 547.5C60 545 120 540 180 534.3C240 528.7 300 522.3 360 519.5C420 516.7 480 517.3 540 513.5C600 509.7 660 501.3 720 501.3C780 501.3 840 509.7 870 513.8L900 518L900 601L870 601C840 601 780 601 720 601C660 601 600 601 540 601C480 601 420 601 360 601C300 601 240 601 180 601C120 601 60 601 30 601L0 601Z"
+        fill="#cb9a81"></path><path
+        d="M0 535L30 542.3C60 549.7 120 564.3 180 568.3C240 572.3 300 565.7 360 561C420 556.3 480 553.7 540 556.5C600 559.3 660 567.7 720 563.8C780 560 840 544 870 536L900 528L900 601L870 601C840 601 780 601 720 601C660 601 600 601 540 601C480 601 420 601 360 601C300 601 240 601 180 601C120 601 60 601 30 601L0 601Z"
+        fill="#c37c58"></path></svg
+      >
+    </div>
+  </div>
+
+  <div class="relative h-[400px] bg-[#c37c58] font-[Glinster] mt-24 z-20">
+    <div class="container h-full">
+      <h1 class="text-5xl text-secondary">Testimonials and Reviews</h1>
+      <div class="testimonials flex justify-center items-center mt-4 w-full">
+        <SwiperSlider />
+      </div>
+    </div>
+  </div>
+
+  <ShapeDivider />
+
+  <Pricing />
+
+  <!-- <hr class="border-t border-gray-700 my-12 w-full max-w-xl mx-auto" /> -->
+  <div class="w-24 h-1 bg-[#e8cbb1] mx-auto mt-12 rounded-full"></div>
+
+  <div class="get-in-touch max-w-xl mx-auto w-full bg-black">
+    <h3 class="text-4xl text-center font-[Glinster] text-[#e8cbb1] mt-12">
+      Connect with Me
+    </h3>
+    <Connect />
+  </div>
+
+  <footer
+    class="bg-black text-gray-400 text-sm py-8 mt-16 border-t border-gray-700"
+  >
+    <div
+      class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4"
+    >
+      <div>
+        <span class="text-white font-semibold">E-mail:</span>
+        <a
+          href="mailto:johnsmith@example.com"
+          class="hover:underline hover:text-primary transition"
+        >
+          johnsmith@example.com
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-center">
+        &copy; 2025 <span class="text-white font-semibold"
+          >M Sabaq</span
+        >. All rights reserved.
+      </div>
+
+      <!-- Developer Credit -->
+      <div>
+        Developed by
+        <a
+          href="https://msabaq.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-white font-medium hover:text-primary transition"
+        >
+          M Sabaq
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .navbar {
+      background-color: black;
+      height: 80px;
+    }
+    .navbar .container {
+      height: 100%;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 100%;
+      justify-content: start;
+      gap: 50px;
+      align-items: center;
     }
-
-    h1 {
-      font-family: "Glinster";
-      color: var(--primary-color);
-      font-size: 5em;
-    }
-
-    p {
-      max-width: 420px;
-      font-size: 1.2em;
-    }
-
-    img {
+    a.hire::before {
+      content: "";
       position: absolute;
+      width: 100%;
       height: 100%;
-      aspect-ratio: 3/2;
-      width: auto;
-      right: 0;
       top: 0;
-      object-fit: cover;
-      background-attachment: fixed;
+      left: -100%;
+      transform: scaleX(0.95) scaleY(0.9);
+      background-color: var(--primary-color);
+      z-index: -1;
+      transition: all 0.3s ease-in-out;
     }
-  }
-</style>
+    a.hire:hover::before {
+      left: 0;
+    }
+  </style>
+
+  <style>
+    .hero {
+      height: calc(100vh - 80px);
+      position: relative;
+      overflow: visible;
+
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 1),
+          rgba(0, 0, 0, 0.2),
+          rgba(0, 0, 0, 1)
+        ),
+        radial-gradient(circle, rgba(25, 25, 25, 1), rgba(0, 0, 0, 1));
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        
+      }
+
+      h1 {
+        font-family: "Glinster";
+        color: var(--primary-color);
+        font-size: 5em;
+        line-height: 0.8em;
+      }
+
+      p {
+        margin-top: 20px;
+        max-width: 420px;
+        font-size: 1.2em;
+      }
+
+      .hero-image {
+        position: absolute;
+        height: 100%;
+        aspect-ratio: 3/2;
+        width: auto;
+        top: 0;
+        right: -100px;
+        overflow-x: visible;
+        display: flex;
+      }
+    }
+
+    @media (max-aspect-ratio: 680/604)  {
+      .hero .hero-image {
+        right: 50%;
+        top: 0%;
+        transform: translateX(54%)
+      }
+      .hero h1 {
+        font-size: 4em;
+      }
+      .hero p {
+        text-align: center;
+        
+      }
+      .hero .container{
+        align-items: center;
+      }
+    }
+      
+    @media (max-aspect-ratio: 3/2) {
+      .hero .hero-img{
+        width: 100%;
+        height: 100%;
+        aspect-ratio: unset;
+      }
+      .hero-image img{
+        opacity:0.8;
+      }
+      .hero h1 {
+        font-size: 4em;
+      }
+      .hero p, .hero h1 {
+        position: relative;
+        z-index: 10;
+      }
+    }
+
+    .image-container img {
+      border-radius: 4px;
+      transition: transform 0.3s ease;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .image-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 30%;
+      height: 100%;
+      background: linear-gradient(to left, black, transparent);
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+     .image-container img{
+      width: 330px;
+     }
+    }
+    @media (max-width: 448px) {
+     .image-container img{
+      width: 250px;
+     }
+    }
+
+    .scrollbar-hide {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;  /* Chrome, Safari and Opera */
+    }
+
+
+    /* masonry */
+
+    .masonry {
+      gap: 1rem;
+    }
+
+    .masonry img {
+      margin-bottom: 1rem;
+      break-inside: avoid;
+    }
+
+   
+      
+
+
+  </style>
+
+  <script>
+    const prevButton = document.querySelector(".prev-button") as HTMLElement;
+    const nextButton = document.querySelector(".next-button") as HTMLElement;
+    const imageContainer = document.querySelector(".image-container");
+    const scrollContainer = document.querySelector(".flex.gap-4.overflow-x-scroll") as HTMLElement;
+
+    if (imageContainer && scrollContainer) {
+      const images = imageContainer.querySelectorAll("img");
+      let imageWidth = images[0]?.offsetWidth || 0;
+      
+      // Recalculate image width on window resize
+      const updateImageWidth = () => {
+        imageWidth = images[0]?.offsetWidth || 0;
+      };
+      
+      window.addEventListener('resize', updateImageWidth);
+
+      let currentIndex = 0;
+      let isDragging = false;
+      let startX = 0;
+      let scrollLeft = 0;
+
+      const updateButtonVisibility = () => {
+        if (prevButton) {
+          prevButton.style.display = scrollContainer.scrollLeft <= 10 ? "none" : "block";
+        }
+        if (nextButton) {
+          nextButton.style.display = scrollContainer.scrollLeft >= scrollContainer.scrollWidth - scrollContainer.clientWidth - 10 ? "none" : "block";
+        }
+      };
+
+      updateButtonVisibility();
+
+      // Handle button clicks
+      if (prevButton) {
+        prevButton.addEventListener("click", () => {
+          scrollContainer.scrollBy({ left: -imageWidth - 16, behavior: "smooth" });
+        });
+      }
+
+      if (nextButton) {
+        nextButton.addEventListener("click", () => {
+          scrollContainer.scrollBy({ left: imageWidth + 16, behavior: "smooth" });
+        });
+      }
+
+      // Handle scroll events
+      scrollContainer.addEventListener("scroll", () => {
+        updateButtonVisibility();
+      });
+
+      // Touch/drag functionality
+      scrollContainer.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        startX = e.pageX - scrollContainer.offsetLeft;
+        scrollLeft = scrollContainer.scrollLeft;
+        scrollContainer.style.cursor = "grabbing";
+      });
+
+      scrollContainer.addEventListener("mouseleave", () => {
+        isDragging = false;
+        scrollContainer.style.cursor = "grab";
+      });
+
+      scrollContainer.addEventListener("mouseup", () => {
+        isDragging = false;
+        scrollContainer.style.cursor = "grab";
+      });
+
+      scrollContainer.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollContainer.offsetLeft;
+        const walk = (x - startX) * 2; // Speed multiplier
+        scrollContainer.scrollLeft = scrollLeft - walk;
+      });
+
+      // Touch events for mobile
+      scrollContainer.addEventListener("touchstart", (e) => {
+        isDragging = true;
+        startX = e.touches[0].pageX - scrollContainer.offsetLeft;
+        scrollLeft = scrollContainer.scrollLeft;
+      });
+
+      scrollContainer.addEventListener("touchend", () => {
+        isDragging = false;
+      });
+
+      scrollContainer.addEventListener("touchmove", (e) => {
+        if (!isDragging) return;
+        const x = e.touches[0].pageX - scrollContainer.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollContainer.scrollLeft = scrollLeft - walk;
+        updateButtonVisibility();
+      });
+    }
+  </script>
+</Layout>
